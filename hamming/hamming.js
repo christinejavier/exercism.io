@@ -23,6 +23,4 @@ hamming.prototype.compute = function(str1, str2) {
   return answer;
 }
 
-// console.log(hamming.prototype.compute("AT", "CG"));
 module.exports = hamming;
-// expect( function(){ parser.parse(raw); } ).toThrow(new Error("Parsing is not possible"));
