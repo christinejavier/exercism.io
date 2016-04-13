@@ -1,11 +1,3 @@
-// function hamming(str1, str2) {
-//   this.compute = function() {
-//     if (str1 === str2) {
-//       return 0;
-//     }
-//   }
-// }
-
 var hamming = function() {};
 
 hamming.prototype.compute = function(str1, str2) {
