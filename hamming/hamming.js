@@ -10,7 +10,7 @@ var hamming = function() {};
 
 hamming.prototype.compute = function(str1, str2) {
   if (str1.length !== str2.length) {
-    return "DNA strands must be of equal length.";
+    throw new Error( "DNA strands must be of equal length.");
   }
   var answer = 0;
   str1 = str1.toUpperCase().split("");
@@ -25,3 +25,4 @@ hamming.prototype.compute = function(str1, str2) {
 
 // console.log(hamming.prototype.compute("AT", "CG"));
 module.exports = hamming;
+// expect( function(){ parser.parse(raw); } ).toThrow(new Error("Parsing is not possible"));
