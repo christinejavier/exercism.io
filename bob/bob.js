@@ -4,16 +4,27 @@
 //
 
 function testForNumsAndSymb(x) {
-  var symbols = /[-!$%^&*()_+|~=`{}\[\]:";'<>,.\/\d\s]/;
+  var symbols = /[-!$%^&*()_+|~=`{}\[\]:";'<>,.?\/\d\s]/;
   var answer = x.match(symbols);
+  return Boolean(answer);
+}
+
+function testForNumsOnly(x) {
+  var nums = /[0-9]/;
+  var answer = x.match(nums);
   return Boolean(answer);
 }
 
 var Bob = function() {};
 
 Bob.prototype.hey = function(input) {
+
+
   input = input.split("");
-  if (input.every(testForNumsAndSymb)) {
+  if (input.every(testForNumsAndSymb) && input[input.length - 1] === "?") {
+    return "Sure.";
+  }
+  else if (input.every(testForNumsAndSymb)) {
     return "Whatever.";
   }
   else {
