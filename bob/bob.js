@@ -15,13 +15,21 @@ function testForNumsOnly(x) {
   return Boolean(answer);
 }
 
+function testsForWhiteSpace(x) {
+  var whiteSpace = /\s/;
+  answer = x.match(whiteSpace);
+  return Boolean(answer);
+}
+
 var Bob = function() {};
 
 Bob.prototype.hey = function(input) {
 
-
   input = input.split("");
-  if (input.every(testForNumsAndSymb) && input[input.length - 1] === "?") {
+  if (input.every(testsForWhiteSpace)) {
+    return "Fine. Be that way!";
+  }
+  else if (input.every(testForNumsAndSymb) && input[input.length - 1] === "?") {
     return "Sure.";
   }
   else if (input.every(testForNumsAndSymb)) {
